@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSL Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>HSL Palette Generator</h1>
+
+    <div class="how-to">
+        <h2 class="how-to-title">How to use</h2>
+        <ol class="how-to-steps">
+            <li><strong>Pick a base color :</strong> it sets the hue and saturation for the <code>500</code> shade.</li>
+            <li><strong>Adjust Hue :</strong> shift the color angle (–50° to +50°) to warm up or cool down the whole scale.</li>
+            <li><strong>Adjust Saturation :</strong> increase or decrease vividness across all shades at once.</li>
+            <li><strong>Click any swatch :</strong> to copy its hex value to your clipboard.</li>
+            <li><strong>Export :</strong> copy the SVG directly into Figma, or download it as a file.</li>
+        </ol>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="baseColor">Base color (500)</label>
+            <input type="color" id="baseColor" value="#3b82f6">
+        </div>
+        <div class="control-group">
+            <label for="hueAdj">
+                Hue shift <span id="hueVal">0°</span>
+            </label>
+            <input type="range" id="hueAdj" min="-50" max="50" value="0">
+        </div>
+        <div class="control-group">
+            <label for="satAdj">
+                Saturation <span id="satVal">0%</span>
+            </label>
+            <input type="range" id="satAdj" min="-50" max="50" value="0">
+        </div>
+        <div class="control-group actions-group">
+            <label>Export palette</label>
+            <div class="btn-group">
+                <button type="button" id="copySvgBtn" class="btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copy SVG (Figma)
+                </button>
+                <button type="button" id="downloadSvgBtn" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download SVG
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="palette-container">
+        <div class="palette-row">
+            <div class="palette-label" id="colorName">Custom</div>
+            <div class="swatches" id="swatchContainer"></div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Copied to clipboard!</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
