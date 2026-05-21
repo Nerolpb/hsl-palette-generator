@@ -11,9 +11,9 @@ A lightweight, zero-dependency tool to generate Tailwind-style color scales (50â
 
 ## Usage
 
-Just open `generateur_palette_couleur.html` in your browser. No build step, no dependencies.
+Just open `index.html` in your browser with a localhost.
 
-Or use it live via :
+Or use it live via : https://hsl-palette-generator.onrender.com/
 
 ## How it works
 
